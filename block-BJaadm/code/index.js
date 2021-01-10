@@ -131,7 +131,7 @@ console.log( [...peopleGrade].sort(sortDesc) );
 
 // Sort the array peopelName in ascending `ABCD..Za....z`
 
-console.log(peopleName.sort().reverse());
+console.log(peopleName.sort());
 
 // Sort the array peopelName in ascending `ABCD..Za....z`. Make sure not to mutate the array
-console.log([...peopleName].sort().reverse());
+console.log([...peopleName].sort());
