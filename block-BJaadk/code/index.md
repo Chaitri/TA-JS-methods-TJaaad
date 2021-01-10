@@ -10,7 +10,7 @@ function double(num) {
 }
 let doubleNum = numbers.forEach(double);
 ```
-![](./img/main.png)
+![Exercise 1](./img/Img1.png)
 
 
 ```js
@@ -20,6 +20,7 @@ function double(num) {
 }
 let doubleNum = numbers.forEach(double);
 ```
+![Exercise 3](./img/img3.png)
 
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
@@ -28,6 +29,7 @@ function double(num) {
 }
 let doubleNum = numbers.forEach(double);
 ```
+![Exercise 2](./img/img2.png)
 
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
@@ -36,6 +38,7 @@ function double(num) {
 }
 let doubleNumbers = numbers.map(double);
 ```
+![Exercise 4](./img/img4.png)
 
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
@@ -44,6 +47,7 @@ function addTwo(num) {
 }
 let doubleNumbers = numbers.map(addTwo);
 ```
+![Exercise 5](./img/img5.png)
 
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
@@ -52,6 +56,7 @@ function addTwo(num) {
 }
 let doubleNumbers = numbers.map(addTwo);
 ```
+![Exercise 6](./img/img6.png)
 
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
@@ -60,6 +65,8 @@ function addTwo(num) {
 }
 let doubleNumbers = numbers.map(addTwo);
 ```
+![Exercise 7](./img/img7.png)
+
 
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
@@ -68,6 +75,8 @@ function isOdd(num) {
 }
 let oddNumbers = numbers.filter(isOdd);
 ```
+![Exercise 8](./img/img8.png)
+
 
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
@@ -76,6 +85,8 @@ function test(num) {
 }
 let filteredNumbers = numbers.filter(test);
 ```
+![Exercise 9](./img/img9.png)
+
 
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
@@ -84,19 +95,24 @@ function test(num) {
 }
 let filteredNumbers = numbers.filter(test);
 ```
+![Exercise 10](./img/img10.png)
+
 
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function add(accumulator, currentValue) {
   return accumulator + currentValue;
 }
-let sum = numbers.reduce(add);
+let sum = numbers.reduce(add, 0);
 ```
+![Exercise 11](./img/img11.png)
+
 
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function add(accumulator, currentValue) {
   console.log(accumulator + currentValue);
 }
-let sum = numbers.reduce(add);
+let sum = numbers.reduce(add, 0);
 ```
+![Exercise 12](./img/img12.png)
