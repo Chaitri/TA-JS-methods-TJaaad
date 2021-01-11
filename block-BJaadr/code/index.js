@@ -1,35 +1,77 @@
 // NOTE: You can only use the (reduce) array method to solve this exercise:
 
 function countAllPeople() {
-  // your code goes here
+  let count = got.houses.reduce( (acc, cv) => {
+    acc += cv.people.length;
+    return acc;
+  }, 0);
+  return count;
 }
 
 function peopleByHouses() {
-  // your code goes here
+  return got.houses.reduce( (acc, cv) => {
+    acc[cv.name] = cv.people.length;
+    return acc;
+  }, {});
 }
 
 function everyone() {
-  // your code goes here
+  return got.houses.reduce( (acc, cv) => {
+    acc = acc.concat(cv.people.map( person => person.name));
+    return acc;
+  }, []);
 }
 
 function nameWithS() {
-  // your code goes here
+  return got.houses.reduce( (acc, cv) => {
+    let names = []
+    cv.people.forEach( person => {
+      if(person.name.toLowerCase().includes('s')) names.push(person.name);
+    });
+    acc = acc.concat(names);
+    return acc;
+  }, []);
 }
 
 function nameWithA() {
-  // your code goes here
+  return got.houses.reduce( (acc, cv) => {
+    let names = []
+    cv.people.forEach( person => {
+      if(person.name.toLowerCase().includes('a')) names.push(person.name);
+    });
+    acc = acc.concat(names);
+    return acc;
+  }, [])
 }
 
 function surnameWithS() {
-  // your code goes here
+  return got.houses.reduce( (acc, cv) => {
+    let names = []
+    cv.people.forEach( person => {
+      if(person.name.split(' ')[1].startsWith('S')) names.push(person.name);
+    });
+    acc = acc.concat(names);
+    return acc;
+  }, [])
 }
 
 function surnameWithA() {
-  // your code goes here
+  return got.houses.reduce( (acc, cv) => {
+    let names = []
+    cv.people.forEach( person => {
+      if(person.name.split(' ')[1].startsWith('A')) names.push(person.name);
+    });
+    acc = acc.concat(names);
+    return acc;
+  }, [])
 }
 
 function peopleNameOfAllHouses() {
-  // your code goes here
+  return got.houses.reduce( (acc,cv) => {
+    let names = cv.people.map( person => person.name);
+    acc[cv.name] = names;
+    return acc;
+  }, {})
 }
 
 // Testing your result after writing your function
