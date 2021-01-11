@@ -17,24 +17,21 @@ let persons = [
 
 // Find the average grade
 console.log('Average grade:' , 
-  persons.map( person => person.grade)
-  .reduce( (acc, grade) => { return acc + grade}, 0) / persons.length
+  persons.reduce( (acc, person) => { return acc + person.grade}, 0) / persons.length
 );
 
 // Find the average grade of male
 let maleStudents = persons.filter( person => person.sex === 'M');
 console.log('Average male grade:' , 
   maleStudents
-  .map( person => person.grade)
-  .reduce( (acc, grade) => { return acc + grade}, 0) / maleStudents.length
+  .reduce( (acc, person) => { return acc + person.grade}, 0) / maleStudents.length
 );
 
 // Find the average grade of female
 let femaleStudents = persons.filter( person => person.sex === 'F');
 console.log('Average female grade:' , 
 femaleStudents
-  .map( person => person.grade)
-  .reduce( (acc, grade) => { return acc + grade}, 0) / femaleStudents.length
+  .reduce( (acc, person) => { return acc + person.grade}, 0) / femaleStudents.length
 );
 
 // Find the highest grade
@@ -95,6 +92,13 @@ fruitBasket.forEach(fruit => {
   else fruitsObj[fruit] = 1;
 });
 
+//Using reduce:
+
+let fruitsObjNew = {};
+fruitBasket.reduce( (acc, fruit) => {
+  if(fruitsObjNew[fruit]) fruitsObjNew[fruit] += 1;
+  else fruitsObjNew[fruit] = 1;
+}, {})
 
 /* 
 
@@ -111,6 +115,12 @@ for(let key in fruitsObj) {
   fruitsArr.push([key, fruitsObj[key]]);
 }
 
+//Using reduce:
+
+let fruitsArr1 = Object.keys(fruitsObj).reduce( (acc, cv) => 
+  acc.concat([[ cv , fruitsObj[cv]]]) 
+,[]);
+
 const data = [
   [1, 2, 3],
   [4, 5, 6],
@@ -120,7 +130,10 @@ const data = [
 
 // Using reduce flat data array
 
-console.log(data.flat());
+console.log( data.reduce( (acc, cv) => {
+  acc = acc.concat(cv);
+  return acc;
+}, []) );
 
 const dataTwo = [
   [1, 2, 3],
@@ -130,7 +143,10 @@ const dataTwo = [
 ];
 
 // Using reduce flat dataTwo array
-console.log(dataTwo.flat(2));
+console.log(dataTwo.reduce( (acc,cv) => {
+  acc = acc.concat(cv.flat(Infinity))
+  return acc;
+},[]));
 
 /*
 
